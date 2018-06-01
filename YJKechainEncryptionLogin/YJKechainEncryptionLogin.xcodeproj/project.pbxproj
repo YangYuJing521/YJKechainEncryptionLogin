@@ -15,6 +15,9 @@
 		496706F920C0E02000EC2101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 496706F820C0E02000EC2101 /* main.m */; };
 		4967070320C0E02100EC2101 /* YJKechainEncryptionLoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967070220C0E02100EC2101 /* YJKechainEncryptionLoginTests.m */; };
 		4967070E20C0E02100EC2101 /* YJKechainEncryptionLoginUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967070D20C0E02100EC2101 /* YJKechainEncryptionLoginUITests.m */; };
+		4967072120C0E5EA00EC2101 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967071F20C0E5EA00EC2101 /* SAMKeychain.m */; };
+		4967072220C0E5EA00EC2101 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967072020C0E5EA00EC2101 /* SAMKeychainQuery.m */; };
+		4967072520C0E66900EC2101 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967072320C0E66900EC2101 /* NSString+Hash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		4967070D20C0E02100EC2101 /* YJKechainEncryptionLoginUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJKechainEncryptionLoginUITests.m; sourceTree = "<group>"; };
 		4967070F20C0E02100EC2101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4967071B20C0E05700EC2101 /* YJKechainEncryptionLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YJKechainEncryptionLogin.entitlements; sourceTree = "<group>"; };
+		4967071D20C0E5E900EC2101 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
+		4967071E20C0E5EA00EC2101 /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
+		4967071F20C0E5EA00EC2101 /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
+		4967072020C0E5EA00EC2101 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
+		4967072320C0E66900EC2101 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		4967072420C0E66900EC2101 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +118,7 @@
 				496706ED20C0E01E00EC2101 /* ViewController.m */,
 				496706EF20C0E01E00EC2101 /* Main.storyboard */,
 				496706F220C0E02000EC2101 /* Assets.xcassets */,
+				4967071C20C0E54100EC2101 /* tools */,
 				496706F420C0E02000EC2101 /* LaunchScreen.storyboard */,
 				496706F720C0E02000EC2101 /* Info.plist */,
 				496706F820C0E02000EC2101 /* main.m */,
@@ -132,6 +142,19 @@
 				4967070F20C0E02100EC2101 /* Info.plist */,
 			);
 			path = YJKechainEncryptionLoginUITests;
+			sourceTree = "<group>";
+		};
+		4967071C20C0E54100EC2101 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				4967072420C0E66900EC2101 /* NSString+Hash.h */,
+				4967072320C0E66900EC2101 /* NSString+Hash.m */,
+				4967071E20C0E5EA00EC2101 /* SAMKeychain.h */,
+				4967071F20C0E5EA00EC2101 /* SAMKeychain.m */,
+				4967071D20C0E5E900EC2101 /* SAMKeychainQuery.h */,
+				4967072020C0E5EA00EC2101 /* SAMKeychainQuery.m */,
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				496706EE20C0E01E00EC2101 /* ViewController.m in Sources */,
+				4967072520C0E66900EC2101 /* NSString+Hash.m in Sources */,
+				4967072120C0E5EA00EC2101 /* SAMKeychain.m in Sources */,
+				4967072220C0E5EA00EC2101 /* SAMKeychainQuery.m in Sources */,
 				496706F920C0E02000EC2101 /* main.m in Sources */,
 				496706EB20C0E01D00EC2101 /* AppDelegate.m in Sources */,
 			);
