@@ -51,6 +51,7 @@
 		4967070920C0E02100EC2101 /* YJKechainEncryptionLoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YJKechainEncryptionLoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4967070D20C0E02100EC2101 /* YJKechainEncryptionLoginUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJKechainEncryptionLoginUITests.m; sourceTree = "<group>"; };
 		4967070F20C0E02100EC2101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4967071B20C0E05700EC2101 /* YJKechainEncryptionLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YJKechainEncryptionLogin.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		496706E820C0E01D00EC2101 /* YJKechainEncryptionLogin */ = {
 			isa = PBXGroup;
 			children = (
+				4967071B20C0E05700EC2101 /* YJKechainEncryptionLogin.entitlements */,
 				496706E920C0E01D00EC2101 /* AppDelegate.h */,
 				496706EA20C0E01D00EC2101 /* AppDelegate.m */,
 				496706EC20C0E01E00EC2101 /* ViewController.h */,
@@ -199,6 +201,11 @@
 				TargetAttributes = {
 					496706E520C0E01D00EC2101 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					496706FD20C0E02100EC2101 = {
 						CreatedOnToolsVersion = 9.4;
@@ -433,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YJKechainEncryptionLogin/YJKechainEncryptionLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56NGMCS5S7;
 				INFOPLIST_FILE = YJKechainEncryptionLogin/Info.plist;
@@ -450,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YJKechainEncryptionLogin/YJKechainEncryptionLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56NGMCS5S7;
 				INFOPLIST_FILE = YJKechainEncryptionLogin/Info.plist;
