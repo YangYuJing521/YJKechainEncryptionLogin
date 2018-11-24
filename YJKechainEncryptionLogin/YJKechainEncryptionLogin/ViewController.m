@@ -31,7 +31,7 @@
     self.userNameField.text = [loginHandler getUserName];
     self.passwordField.text = [loginHandler getPassWord];
     self.autoLoginSwitch.enabled = self.rememberPwdSwitch.isOn;
-    //自动登录
+    //自动登录方法
     [loginHandler autoLoginIn:^(BOOL isSuccess) {
         if (isSuccess) { //自动登录成功
             [self longInSucceedJump];
