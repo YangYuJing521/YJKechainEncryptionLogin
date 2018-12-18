@@ -115,13 +115,26 @@
                                     <action selector="autoLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ccI-40-bXY"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcP-t5-eCx">
+                                <rect key="frame" x="142" y="478" width="90" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PXq-x0-Q8f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="指纹验证"/>
+                                <connections>
+                                    <action selector="zhiWenAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yis-VR-flT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EaU-7E-7MG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="2t5-ND-WhV"/>
                             <constraint firstItem="AH3-V7-NKe" firstAttribute="centerX" secondItem="9rs-1c-9qF" secondAttribute="centerX" id="3f0-3U-2N1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AH3-V7-NKe" secondAttribute="bottom" constant="239" id="56c-P4-SSA"/>
+                            <constraint firstItem="FcP-t5-eCx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="142" id="5O5-Ut-yhS"/>
                             <constraint firstItem="3ff-Eg-St9" firstAttribute="leading" secondItem="9rs-1c-9qF" secondAttribute="leading" id="7EC-hh-4fi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FcP-t5-eCx" secondAttribute="trailing" constant="143" id="CHd-xw-Srp"/>
                             <constraint firstItem="3ff-Eg-St9" firstAttribute="top" secondItem="9rs-1c-9qF" secondAttribute="bottom" constant="29" id="CLU-h0-Mx4"/>
                             <constraint firstItem="9rs-1c-9qF" firstAttribute="top" secondItem="EaU-7E-7MG" secondAttribute="bottom" constant="35" id="DRB-ti-Duf"/>
                             <constraint firstItem="t3U-88-K1D" firstAttribute="centerY" secondItem="3ff-Eg-St9" secondAttribute="centerY" id="Hz0-ue-4pP"/>
@@ -134,6 +147,7 @@
                             <constraint firstItem="9rs-1c-9qF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="nVp-tH-kFD"/>
                             <constraint firstItem="H8i-ZU-C6t" firstAttribute="top" secondItem="t3U-88-K1D" secondAttribute="bottom" constant="19" id="oaG-6f-JOS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EaU-7E-7MG" secondAttribute="trailing" constant="80" id="otW-am-GQJ"/>
+                            <constraint firstItem="FcP-t5-eCx" firstAttribute="top" secondItem="AH3-V7-NKe" secondAttribute="bottom" constant="50" id="sVm-B8-1Hw"/>
                             <constraint firstItem="3ff-Eg-St9" firstAttribute="leading" secondItem="TSS-1v-pAN" secondAttribute="leading" id="twt-Pf-dV2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9rs-1c-9qF" secondAttribute="trailing" constant="80" id="uEZ-JC-BOj"/>
                         </constraints>
