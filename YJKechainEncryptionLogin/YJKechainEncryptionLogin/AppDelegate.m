@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "YJLoginHandler.h"
+#import "MainViewController.h"
+#import "LogInController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,10 +18,31 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(longInSucceed) name:LogInSucceedNotificaton object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logOutSucceed) name:LogInOutNotificaton object:nil];
+    
+    [[YJLoginHandler sharedInstance] autoLoginIn:^(BOOL isSuccess) {
+        if (isSuccess) {
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:MainViewController.new];
+            self.window.rootViewController = nav;
+        }else{
+            UIStoryboard *login = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            self.window.rootViewController = login.instantiateInitialViewController;
+        }
+    }];
     return YES;
 }
 
+-(void)longInSucceed{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:MainViewController.new];
+    self.window.rootViewController = nav;
+}
+
+-(void)logOutSucceed{
+    UIStoryboard *login = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    self.window.rootViewController = login.instantiateInitialViewController;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

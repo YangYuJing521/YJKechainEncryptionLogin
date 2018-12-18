@@ -9,6 +9,7 @@
 #import "YJLoginHandler.h"
 #import "NSString+Hash.h"
 #import "SAMKeychain.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 
 @interface YJLoginHandler()
 @property (nonatomic, copy) void(^resultBlock)(BOOL result);
@@ -83,6 +84,79 @@ static YJLoginHandler *_instance = nil;
     NSString *encryptPWD = encrypMethodTwo(password,key); //加密
     //请求登录接口
     [self requestLoginWithUserName:userName encrypdPassword:encryptPWD];
+}
+
+/** 退出登录*/
+-(void)logOut{
+    [[NSNotificationCenter defaultCenter] postNotificationName:LogInOutNotificaton object:nil];
+}
+
+/** 验证指纹 */
+-(void)LocalAuthenticationWithReason:(NSString *)reason Succeed:(void(^)(BOOL success, NSString *errMsg))result{
+    if ([UIDevice currentDevice].systemVersion.floatValue>=8.0) {//ios8.0以后支持
+        LAContext *contex = [[LAContext alloc] init];
+        //LAPolicyDeviceOwnerAuthentication  //2次失败后弹出密码验证
+        //LAPolicyDeviceOwnerAuthenticationWithBiometrics  3次+2次没通过 不会再验证
+        if ([contex canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:nil]) {//iphone 5s以后支持
+            
+            //执行验证
+            [contex evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:reason reply:^(BOOL success, NSError * _Nullable error) {
+                
+                //这里是子线程
+                if (success) {
+                    //回到主线程
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        result(YES,@"验证指纹成功");
+                    });
+                }else{
+                    NSString *errorStr = nil;
+                    switch (error.code) {
+                        case LAErrorAuthenticationFailed:
+                            errorStr = @"指纹无法识别";
+                            break;
+                        case LAErrorUserCancel:
+                            errorStr = @"用户点击了取消";
+                            break;
+                        case LAErrorUserFallback:
+                            errorStr = @"用户点击了输入密码";
+                            break;
+                        case LAErrorSystemCancel:
+                            errorStr = @"系统取消";
+                            break;
+                        case LAErrorPasscodeNotSet:
+                            errorStr = @"因为你设备上没有设置密码";
+                            break;
+                        case LAErrorTouchIDNotAvailable:
+                            errorStr = @"设备没有Touch ID";
+                            break;
+                        case LAErrorTouchIDNotEnrolled:
+                            errorStr = @"因为你的用户没有输入指纹";
+                            break;
+                        case LAErrorTouchIDLockout:
+                            errorStr = @"多次输入，密码锁定";
+                            break;
+                        case LAErrorAppCancel:
+                            errorStr = @"比如电话进入，用户不可控的";
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        result(NO, errorStr);
+                    });
+                    
+                }
+            }];
+            
+        }else{
+            result(NO, @"不支持指纹识别");
+        }
+    }else{
+        result(NO, @"系统版本不支持");
+    }
+
 }
 
 #pragma mark 私有方法

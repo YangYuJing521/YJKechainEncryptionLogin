@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		496706EB20C0E01D00EC2101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 496706EA20C0E01D00EC2101 /* AppDelegate.m */; };
-		496706EE20C0E01E00EC2101 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496706ED20C0E01E00EC2101 /* ViewController.m */; };
+		496706EE20C0E01E00EC2101 /* LogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496706ED20C0E01E00EC2101 /* LogInController.m */; };
 		496706F120C0E01E00EC2101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496706EF20C0E01E00EC2101 /* Main.storyboard */; };
 		496706F320C0E02000EC2101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496706F220C0E02000EC2101 /* Assets.xcassets */; };
 		496706F620C0E02000EC2101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496706F420C0E02000EC2101 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,7 @@
 		4967072120C0E5EA00EC2101 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967071F20C0E5EA00EC2101 /* SAMKeychain.m */; };
 		4967072220C0E5EA00EC2101 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967072020C0E5EA00EC2101 /* SAMKeychainQuery.m */; };
 		4967072520C0E66900EC2101 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967072320C0E66900EC2101 /* NSString+Hash.m */; };
+		4986A87D21C8C31900912FC9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4986A87C21C8C31800912FC9 /* MainViewController.m */; };
 		498E40C121A93C1800E61045 /* YJLoginHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 498E40C021A93C1800E61045 /* YJLoginHandler.m */; };
 		498E40C421A94A1800E61045 /* MDProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 498E40C221A94A1800E61045 /* MDProgressHUD.m */; };
 /* End PBXBuildFile section */
@@ -43,8 +44,8 @@
 		496706E620C0E01D00EC2101 /* YJKechainEncryptionLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJKechainEncryptionLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496706E920C0E01D00EC2101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		496706EA20C0E01D00EC2101 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		496706EC20C0E01E00EC2101 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		496706ED20C0E01E00EC2101 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		496706EC20C0E01E00EC2101 /* LogInController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInController.h; sourceTree = "<group>"; };
+		496706ED20C0E01E00EC2101 /* LogInController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInController.m; sourceTree = "<group>"; };
 		496706F020C0E01E00EC2101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		496706F220C0E02000EC2101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		496706F520C0E02000EC2101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +63,8 @@
 		4967072020C0E5EA00EC2101 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
 		4967072320C0E66900EC2101 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		4967072420C0E66900EC2101 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		4986A87B21C8C31800912FC9 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4986A87C21C8C31800912FC9 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		498E40BD21A93B5300E61045 /* YJKechainEncryptionLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YJKechainEncryptionLogin.entitlements; sourceTree = "<group>"; };
 		498E40BF21A93C1800E61045 /* YJLoginHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJLoginHandler.h; sourceTree = "<group>"; };
 		498E40C021A93C1800E61045 /* YJLoginHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJLoginHandler.m; sourceTree = "<group>"; };
@@ -122,8 +125,10 @@
 				498E40BE21A93BD600E61045 /* loginHandler */,
 				496706E920C0E01D00EC2101 /* AppDelegate.h */,
 				496706EA20C0E01D00EC2101 /* AppDelegate.m */,
-				496706EC20C0E01E00EC2101 /* ViewController.h */,
-				496706ED20C0E01E00EC2101 /* ViewController.m */,
+				496706EC20C0E01E00EC2101 /* LogInController.h */,
+				496706ED20C0E01E00EC2101 /* LogInController.m */,
+				4986A87B21C8C31800912FC9 /* MainViewController.h */,
+				4986A87C21C8C31800912FC9 /* MainViewController.m */,
 				496706EF20C0E01E00EC2101 /* Main.storyboard */,
 				496706F220C0E02000EC2101 /* Assets.xcassets */,
 				496706F420C0E02000EC2101 /* LaunchScreen.storyboard */,
@@ -310,10 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496706EE20C0E01E00EC2101 /* ViewController.m in Sources */,
+				496706EE20C0E01E00EC2101 /* LogInController.m in Sources */,
 				498E40C421A94A1800E61045 /* MDProgressHUD.m in Sources */,
 				4967072520C0E66900EC2101 /* NSString+Hash.m in Sources */,
 				4967072120C0E5EA00EC2101 /* SAMKeychain.m in Sources */,
+				4986A87D21C8C31900912FC9 /* MainViewController.m in Sources */,
 				4967072220C0E5EA00EC2101 /* SAMKeychainQuery.m in Sources */,
 				498E40C121A93C1800E61045 /* YJLoginHandler.m in Sources */,
 				496706F920C0E02000EC2101 /* main.m in Sources */,
