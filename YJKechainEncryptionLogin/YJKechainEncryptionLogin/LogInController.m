@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"hash算法及钥匙串演练";
 #warning 登录成功测试账号：abc  密码：123
     //初始化
     YJLoginHandler *loginHandler = [YJLoginHandler sharedInstance];

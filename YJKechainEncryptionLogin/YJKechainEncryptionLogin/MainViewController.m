@@ -20,12 +20,19 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"主页";
+    self.navigationItem.title = @"加密演示页面";
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *rightitem = [[UIBarButtonItem alloc] initWithTitle:@"点击退出登录" style:UIBarButtonItemStylePlain target:self action:@selector(logOut)];
     self.navigationItem.rightBarButtonItem = rightitem;
     
+    UILabel *tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 50)];
+    tipsLabel.numberOfLines = 0;
+    tipsLabel.text = @"点击屏幕演示加密及解密，touchesBegan中选择对应加密方式";
+    tipsLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:tipsLabel];
+    
+    #pragma mark rsa 公钥私钥初始化设置
     //设置rsa秘钥尺寸，和生成证书时长度一致
     [[RSACryptor sharedRSACryptor] generateKeyPair:512];
     NSString *publicPath = [[NSBundle mainBundle] pathForResource:@"rsacert.der" ofType:nil];
@@ -61,10 +68,10 @@
     [EncryptionTools sharedEncryptionTools].algorithm = kCCAlgorithmAES;
     NSString *eccryptString = [[EncryptionTools sharedEncryptionTools] encryptString:@"hello" keyString:keyString iv:nil];
     //加密完成是nsdata base64 方法返回的字符串是对nsdatad处理后的数据
-    NSLog(@"加密：%@",eccryptString);
+    NSLog(@"AES_ECB加密：%@",eccryptString);
     
     NSString *decryptString = [[EncryptionTools sharedEncryptionTools] decryptString:eccryptString keyString:keyString iv:nil];
-    NSLog(@"解密：%@",decryptString);
+    NSLog(@"AES_ECB解密：%@",decryptString);
 }
 
 //CBC 加密方式（牵一发动全城，链式篡改一处会影响后面数据的加密），需要向量
@@ -76,20 +83,20 @@
     NSData *ivdata = [NSData dataWithBytes:iv length:sizeof(iv)];
     NSString *eccryptString = [[EncryptionTools sharedEncryptionTools] encryptString:@"hello" keyString:keyString iv:ivdata];
     //加密完成是nsdata base64 方法返回的字符串是对nsdatad处理后的数据
-    NSLog(@"加密：%@",eccryptString);
+    NSLog(@"AES_CBC加密：%@",eccryptString);
     
     NSString *decryptString = [[EncryptionTools sharedEncryptionTools] decryptString:eccryptString keyString:keyString iv:ivdata];
-    NSLog(@"解密：%@",decryptString);
+    NSLog(@"AES_CBC解密：%@",decryptString);
 }
 
 //DES标准加密算法
 -(void)DES_ECB{
     [EncryptionTools sharedEncryptionTools].algorithm = kCCAlgorithmDES;
     NSString *encryptString = [[EncryptionTools sharedEncryptionTools] encryptString:@"hello" keyString:keyString iv:nil];
-    NSLog(@"%@",encryptString);
+    NSLog(@"DES_ECB加密%@",encryptString);
     
     NSString *decryptString = [[EncryptionTools sharedEncryptionTools] decryptString:encryptString keyString:keyString iv:nil];
-    NSLog(@"%@",decryptString);
+    NSLog(@"DES_ECB解密%@",decryptString);
 }
 
 -(void)DES_CBC{
@@ -97,10 +104,10 @@
     uint8_t iv[8] = {1,2,3,4,5,6,7,8};
     NSData *ivData = [NSData dataWithBytes:iv length:sizeof(iv)];
     NSString *encryptString = [[EncryptionTools sharedEncryptionTools] encryptString:@"hello" keyString:keyString iv:ivData];
-    NSLog(@"%@",encryptString);
+    NSLog(@"DES_CBC加密%@",encryptString);
     
     NSString *deCryptString = [[EncryptionTools sharedEncryptionTools] decryptString:encryptString keyString:keyString iv:ivData];
-    NSLog(@"%@",deCryptString);
+    NSLog(@"DES_CBC解密%@",deCryptString);
 }
 
 #pragma mark 非对称加密
