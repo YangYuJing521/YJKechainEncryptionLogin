@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494F54E521CB919400819F8B /* EncryptionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 494F54E321CB919400819F8B /* EncryptionTools.m */; };
+		494F54E821CB91C500819F8B /* RSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 494F54E721CB91C400819F8B /* RSACryptor.m */; };
+		494F54EE21CC9B1300819F8B /* p.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 494F54EC21CC9B1300819F8B /* p.p12 */; };
+		494F54EF21CC9B1300819F8B /* rsacert.der in Resources */ = {isa = PBXBuildFile; fileRef = 494F54ED21CC9B1300819F8B /* rsacert.der */; };
 		496706EB20C0E01D00EC2101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 496706EA20C0E01D00EC2101 /* AppDelegate.m */; };
 		496706EE20C0E01E00EC2101 /* LogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496706ED20C0E01E00EC2101 /* LogInController.m */; };
 		496706F120C0E01E00EC2101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496706EF20C0E01E00EC2101 /* Main.storyboard */; };
@@ -41,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		494F54E321CB919400819F8B /* EncryptionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTools.m; sourceTree = "<group>"; };
+		494F54E421CB919400819F8B /* EncryptionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTools.h; sourceTree = "<group>"; };
+		494F54E621CB91C400819F8B /* RSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSACryptor.h; sourceTree = "<group>"; };
+		494F54E721CB91C400819F8B /* RSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSACryptor.m; sourceTree = "<group>"; };
+		494F54EC21CC9B1300819F8B /* p.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p.p12; sourceTree = "<group>"; };
+		494F54ED21CC9B1300819F8B /* rsacert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsacert.der; sourceTree = "<group>"; };
 		496706E620C0E01D00EC2101 /* YJKechainEncryptionLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJKechainEncryptionLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496706E920C0E01D00EC2101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		496706EA20C0E01D00EC2101 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,10 +135,14 @@
 				498E40BE21A93BD600E61045 /* loginHandler */,
 				496706E920C0E01D00EC2101 /* AppDelegate.h */,
 				496706EA20C0E01D00EC2101 /* AppDelegate.m */,
+				498E40C321A94A1800E61045 /* MDProgressHUD.h */,
+				498E40C221A94A1800E61045 /* MDProgressHUD.m */,
 				496706EC20C0E01E00EC2101 /* LogInController.h */,
 				496706ED20C0E01E00EC2101 /* LogInController.m */,
 				4986A87B21C8C31800912FC9 /* MainViewController.h */,
 				4986A87C21C8C31800912FC9 /* MainViewController.m */,
+				494F54EC21CC9B1300819F8B /* p.p12 */,
+				494F54ED21CC9B1300819F8B /* rsacert.der */,
 				496706EF20C0E01E00EC2101 /* Main.storyboard */,
 				496706F220C0E02000EC2101 /* Assets.xcassets */,
 				496706F420C0E02000EC2101 /* LaunchScreen.storyboard */,
@@ -165,8 +179,10 @@
 				4967071F20C0E5EA00EC2101 /* SAMKeychain.m */,
 				4967071D20C0E5E900EC2101 /* SAMKeychainQuery.h */,
 				4967072020C0E5EA00EC2101 /* SAMKeychainQuery.m */,
-				498E40C321A94A1800E61045 /* MDProgressHUD.h */,
-				498E40C221A94A1800E61045 /* MDProgressHUD.m */,
+				494F54E421CB919400819F8B /* EncryptionTools.h */,
+				494F54E321CB919400819F8B /* EncryptionTools.m */,
+				494F54E621CB91C400819F8B /* RSACryptor.h */,
+				494F54E721CB91C400819F8B /* RSACryptor.m */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -290,7 +306,9 @@
 			files = (
 				496706F620C0E02000EC2101 /* LaunchScreen.storyboard in Resources */,
 				496706F320C0E02000EC2101 /* Assets.xcassets in Resources */,
+				494F54EE21CC9B1300819F8B /* p.p12 in Resources */,
 				496706F120C0E01E00EC2101 /* Main.storyboard in Resources */,
+				494F54EF21CC9B1300819F8B /* rsacert.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,10 +335,12 @@
 			files = (
 				496706EE20C0E01E00EC2101 /* LogInController.m in Sources */,
 				498E40C421A94A1800E61045 /* MDProgressHUD.m in Sources */,
+				494F54E521CB919400819F8B /* EncryptionTools.m in Sources */,
 				4967072520C0E66900EC2101 /* NSString+Hash.m in Sources */,
 				4967072120C0E5EA00EC2101 /* SAMKeychain.m in Sources */,
 				4986A87D21C8C31900912FC9 /* MainViewController.m in Sources */,
 				4967072220C0E5EA00EC2101 /* SAMKeychainQuery.m in Sources */,
+				494F54E821CB91C500819F8B /* RSACryptor.m in Sources */,
 				498E40C121A93C1800E61045 /* YJLoginHandler.m in Sources */,
 				496706F920C0E02000EC2101 /* main.m in Sources */,
 				496706EB20C0E01D00EC2101 /* AppDelegate.m in Sources */,
